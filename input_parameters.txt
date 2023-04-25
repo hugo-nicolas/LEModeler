@@ -1,0 +1,89 @@
+___________________________ Foil parts to model [yes or no] ___________________________
+---------------------------------------------------------------------------------------
+wing = yes
+stab = yes
+mast = no
+fuselage = no
+---------------------------------------------------------------------------------------
+
+
+
+_______________________ Is the front wing symmetric? [yes or no] ______________________
+---------------------------------------------------------------------------------------
+symmetric = yes
+---------------------------------------------------------------------------------------
+
+
+
+________________________ Close Rhino automatically? [yes or no] _______________________
+---------------------------------------------------------------------------------------
+close = no
+---------------------------------------------------------------------------------------
+
+
+
+_______________________________ Global dimensions (in m) ______________________________
+---------------------------------------------------------------------------------------
+width of the upper part of the mast, D = 0.1202
+width of the lower part of the mast, G = 0.1059
+length of the upper part of the mast, C = 0.2
+length of the lower part of the mast, F = 0.6
+---------------------------------------------------------------------------------------
+front wing semispan, K = 0.3
+root chord of the front wing, R = 0.1
+tip chord of the front wing, S = 0.1
+distance between the front wing and the mast, P = 0.11
+---------------------------------------------------------------------------------------
+stabilizer semispan, M = 0.1
+root chord of the stabilizer, L = 0.045
+tip chord of the stabilizer, T = 0.045
+distance between the stabilizer and the mast, O = 0.4
+---------------------------------------------------------------------------------------
+fuselage thickness, H = 0.03
+length of the front part of the fuselage, Q = 0.05
+length of the rear part of the fuselage, V = 0.555
+---------------------------------------------------------------------------------------
+
+
+
+___________________________________ Angles (in deg) ___________________________________
+---------------------------------------------------------------------------------------
+dihedral angle of the front wing, dw = -20
+sweep angle of the front wing, sw = 3
+twist angle of the front wing, tw = 0
+angle of attack of the front wing, aoaw = 3
+---------------------------------------------------------------------------------------
+dihedral angle of the stabilizer, dbw = 10
+sweep angle of the stabilizer, sbw = 2
+twist angle of the stabilizer, tbw = 0
+angle of attack of the stabilizer, aoabw = 2
+---------------------------------------------------------------------------------------
+
+
+
+_________________________________ Span discretization _________________________________
+---------------------------------------------------------------------------------------
+discretization along the front wing semispan, numsegw = 20
+---------------------------------------------------------------------------------------
+discretization along the stabilizer semispan, numsegbw = 10
+---------------------------------------------------------------------------------------
+
+
+
+___________________________________ Cross-sections ____________________________________
+---------------------------------------------------------------------------------------
+cross section of the mast = naca0008
+cross section of the front wing = h105
+cross section of the stabilizer = naca66210
+cross section of the front part of the fuselage = fuselage_front_section
+cross section of the rear part of the fuselage = fuselage_rear_section
+---------------------------------------------------------------------------------------
+
+
+
+_____________________________________ Extensions ______________________________________
+---------------------------------------------------------------------------------------
+extension = .stp
+extension = .igs
+extension = .x_t
+---------------------------------------------------------------------------------------
