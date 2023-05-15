@@ -4,6 +4,7 @@ message: >-
   If you use this software, please cite it using the
   metadata from this file.
 type: software
+date: 2023
 authors:
   - given-names: H.
     family-names: Nicolas
