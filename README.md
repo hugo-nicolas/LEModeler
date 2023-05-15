@@ -26,7 +26,6 @@ The main folder (the LEModeler folder) contains the following elements:
 - *input_parameters.txt*, which contains the input parameters,
 - *run.bat*, which launches the modeling,
 - *LICENSE*, which contains the license,
-- *CITATION.cff*, which contains information for correctly citing this tool,
 - *README.md*, which you are carefully reading.
 
 The "PythonFiles" folder contains the following scripts:
