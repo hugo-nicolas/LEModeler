@@ -5,7 +5,7 @@ message: >-
   metadata from this file.
 type: software
 authors:
-  - given-names: Hugo
+  - given-names: H.
     family-names: Nicolas
     email: hugo.nicolas@ensta-bretagne.org
     affiliation: ENSTA Bretagne
