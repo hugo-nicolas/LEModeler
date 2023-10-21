@@ -1,6 +1,6 @@
 # LEModeler
 
-LEModeler is an open-source tool for generating and exporting parametric hydrofoil geometries automatically using the Rhinoceros 3D CAD engine.
+LEModeler is an open-source tool for automatically generating and exporting parametric hydrofoil geometries using the Rhinoceros 3D CAD engine.
 
 #
 ## Credit
@@ -21,7 +21,7 @@ For the time being, the tool only runs on Windows.
 The main folder (the LEModeler folder) contains the following elements:
 - a folder called "Exports", which contains the exported parts (if any) of modeled foils,
 - a folder called "PythonFiles", which contains the *.py* files used for modeling a foil,
-- *Sections.zip*, which contains a list of sections (*.dat* format) to be used for modeling a foil,
+- *Sections.zip*, which contains a list of sections (*.dat* in the Selig format) to be used for modeling a foil,
 - *foil_dimensions_scheme.png*, which is a scheme of a typical T-foil and its dimensions,
 - *input_parameters.txt*, which contains the input parameters,
 - *run.bat*, which launches the modeling,
@@ -29,13 +29,13 @@ The main folder (the LEModeler folder) contains the following elements:
 - *README.md*, which you are carefully reading.
 
 The "PythonFiles" folder contains the following scripts:
-- *main.py*, which is the main python script, the one run by Rhino when launching *run.bat*,
+- *main.py*, which is the main Python script, the one run by Rhino when launching *run.bat*,
 - *Class_X.py*, which are classes called for modeling a foil (the code is object-oriented),
 - *Dimensions.py*, which extracts information from *input_parameters.txt*,
 - *airconics_setup.py*, which is a setup file,
 - *AirCONICStools.py*, which contains ancillary methods called by the higher level AirCONICS functions,
 - *liftingsurface.py*, which contains the definition of the class of 3D lifting surfaces,
-- *primitives.py*, which contains the definitions of classes of essential 2D geometrical primitives required for the construction of foil geometries.
+- *primitives.py*, which contains the definitions of classes of essential 2D geometrical primitives required to construct foil geometries.
 
 These scripts use the *rhinoscriptsyntax* library.
 
@@ -49,7 +49,7 @@ The procedure for modeling and exporting a foil is the following:
 - 2. Launch the modeling tool by double-clicking on *run.bat* (once configurated, see step 0.),
 - 3. The exported parts of the modeled foil are available in the "Exports" folder (see the dedicated section [Export](#export)).
 
-In step 2., *run.bat* launches Rhino and runs *main.py* which, in turns, instantiates a foil whose components are defined by the user in *input_parameters.txt*. If desired, the user can decide to run *main.py* directly from Rhino by following the procedure below:
+In step 2., *run.bat* launches Rhino and runs *main.py* which, in turn, instantiates a foil whose components are defined by the user in *input_parameters.txt*. If desired, the user can decide to run *main.py* directly from Rhino by following the procedure below:
 - 2.1. Open Rhino manually,
 - 2.2. Type *RunPythonScript* in the command prompt,
 - 2.3. Fetch *main.py* and open it. 
@@ -67,7 +67,7 @@ C:\"Program Files"\"Rhino X"\System\Rhino.exe /nosplash /runscript="-_RunPythonS
 
 Make sure to update the following elements accordingly:
 - the path to Rhino,
-- the version of Rhino (e.g. from Rhino X to Rhino 7),
+- the version of Rhino (e.g., from Rhino X to Rhino 7),
 - the path to the current folder (the LEModeler folder).
 
 #
@@ -84,9 +84,9 @@ mast = no
 fuselage = no
 ----------------------------------------------------------------------------------
 ```
-A T-foil being composed of four parts (namely the front wing, the stabilizer, the mast, and the fuselage), the lines above allow the user to indicate which foil parts are to be computed by the modeler.
+A T-foil is composed of four parts (namely the front wing, the stabilizer, the mast, and the fuselage). Thus, the lines above allow the user to indicate which foil parts are to be computed by the modeler.
 In this example, only the front wing (referred to as "wing") and the stabilizer (referred to as "stab") will be modeled. That is, a "yes" enables the modeling, whereas a "no" prevents it.
-The purpose is to save computational time while extending the types of geometries that can be modeled beyond just T-foils (e.g. L-foils) simply by playing with the front wing. T-foil geometries being complex, they serve as reference.
+The purpose is to save computational time while extending the types of geometries that can be modeled beyond just T-foils (e.g., L-foils) simply by playing with the front wing. T-foil geometries being complex, they serve as a reference.
 
 ### **Is the front wing symmetric?**
 ```
@@ -102,7 +102,7 @@ In this section is defined whether the front wing is symmetric. That is, a "yes"
 close = no
 ----------------------------------------------------------------------------------
 ```
-In this section is defined whether Rhino will be closed automatically after generating the foil. That is, a "yes" closes Rhino automatically, which may be suited in an optimization framework. On the other hand, a "no" allows to visualize the foil after the modeling.
+In this section is defined whether Rhino will be closed automatically after generating the foil. That is, a "yes" closes Rhino automatically, which may be suited to an optimization framework. On the other hand, a "no" allows one to visualize the foil after the modeling.
 
 ### **Global dimensions**
 ```
@@ -128,7 +128,7 @@ length of the rear part of the fuselage, V = 0.555
 ----------------------------------------------------------------------------------
 ```
 In this section are given the dimensions of the foil such as defined in *foil_dimensions_scheme.png*. 
-The dimensions are in m. They can either be integers (i.e. without decimal points) or floats (i.e. with decimal points).
+The dimensions are in m. They can either be integers (i.e., without decimal points) or floats (i.e., with decimal points).
 The semispan of the front wing is given by the variable K, such that the span is equal to 2K.
     
 
@@ -146,12 +146,12 @@ twist angle of the stabilizer, tbw = 0
 angle of attack of the stabilizer, aoabw = 2
 ----------------------------------------------------------------------------------
 ```
-In this section are given the local ang global angles of rotation of the foil wings.
-The angles are in degrees. They can either be integers (i.e. without decimal points) or floats (i.e. with decimal points).
+In this section are given the local and global angles of rotation of the foil wings.
+The angles are in degrees. They can either be integers (i.e., without decimal points) or floats (i.e., with decimal points).
 - dw (resp. dbw) denotes the dihedral angle for the front wing (resp. the stabilizer), which is positive for an upward angle. 
 - sw (resp. sbw) denotes the sweep angle for the front wing (resp. the stabilizer),
-- tw (resp. tbw) denotes the twist angle for the front wing (resp. the stabilizer), which is defined and thus rotate around the trailing edge of the root section so to washout (positive twist angle means a reduction in angle of attack spanwise),
-- aoaw (resp. aoabw) denotes the angle of attack for the front wing (resp. the stabilizer), which is defined and thus rotate around the trailing edge of the root section.
+- tw (resp. tbw) denotes the twist angle for the front wing (resp. the stabilizer), which is defined and thus rotates around the trailing edge of the root section so to washout (positive twist angle means a reduction in angle of attack spanwise),
+- aoaw (resp. aoabw) denotes the angle of attack for the front wing (resp. the stabilizer), which is defined and thus rotates around the trailing edge of the root section.
 
 ### **Span discretization**
 ```
@@ -161,29 +161,29 @@ discretization along the front wing semispan, numsegw = 20
 discretization along the stabilizer semispan, numsegbw = 10
 ----------------------------------------------------------------------------------
 ```
-In this section is given the number of segments used for discretizing half the span of the foil front wing.
-The number of segments must be an integer (i.e. without decimal points). In any case, the algorithm automatically takes the integer part of the number given.
+In this section, the number of segments used for discretizing is half the span of the foil front wing.
+The number of segments must be an integer (i.e., without decimal points). In any case, the algorithm automatically takes the integer part of the number given.
 
 ### **Cross-sections**
 ```
 ----------------------------------------------------------------------------------
-cross section of the mast = naca0008
-cross section of the front wing = h105
-cross section of the stabilizer = naca66210
-cross section of the front part of the fuselage = fuselage_front_section
-cross section of the rear part of the fuselage = fuselage_rear_section
+cross-section of the mast = naca0008
+cross-section of the front wing = h105
+cross-section of the stabilizer = naca66210
+cross-section of the front part of the fuselage = fuselage_front_section
+cross-section of the rear part of the fuselage = fuselage_rear_section
 ----------------------------------------------------------------------------------
 ```
-In this section are given the names of the cross-section for each foil part.
+In this section are listed the names of the cross-section for each foil part.
 Therefore, in the current version of the modeling tool, each part can only be composed of one cross-sectional profile.
-In this example, the mast cross-section is a naca 4-digit profile (namely NACA 0008) whilst that of the front wing is a user-defined h105 profile.
-Profiles whose name is indicated here in *foil.dimensions.txt* must be in the "Sections" folder. 
+In this example, the mast cross-section is a NACA 4-digit profile (namely NACA 0008) while that of the front wing is a user-defined H105 profile.
+Profiles whose name is indicated here must be in the "Sections" folder. 
 Consequently, any profile can be added by the user in the aforementioned folder as a *.dat* file following the format:
 ```
 <name>
 <longitudinal coordinates> <vertical coordinates>
 ```
-LEModeler is able to model either sharp or blunt trailing edges. A sharp trailing edge is modeled if the airfoil is closed in its corresponding .dat file. On the other hand, a part is modeled with a blunt trailing edge if its cross-section is left opened in the corresponding *.dat* file.
+LEModeler is able to model either sharp or blunt trailing edges. A sharp trailing edge is modeled if the airfoil is closed in its corresponding *.dat* file. On the other hand, a part is modeled with a blunt trailing edge if its cross-section is left open in the corresponding *.dat* file.
 
 For example, the following airfoil would be modeled with a sharp trailing edge:
 ```
@@ -230,13 +230,13 @@ To add (resp. remove) extensions, add (resp. remove) a line "extension = .xxx". 
 #
 ## Export
 Once modeled under Rhino, the parts of the foil are exported in formats chosen by the user (see the dedicated section [Extensions](#extensions), in [Input parameters](#input-parameters)). 
-That is, for each of the parts mentioned above (e.g. the whole main wing), the corresponding polysurface modeled is exported in the "Exports" folder under the name *part_NAME.xxx*. 
-"NAME" denotes the name of the part exported (i.e. wing, stab, mast, or fuselage) whilst ".xxx" denotes the export format extension (see the dedicated section [Extensions](#extensions), in [Input parameters](#input-parameters)). 
+That is, for each of the parts mentioned above (e.g., the whole main wing), the corresponding polysurface modeled is exported in the "Exports" folder under the name *part_NAME.xxx*. 
+"NAME" denotes the name of the part exported (i.e., wing, stab, mast, or fuselage) while ".xxx" denotes the export format extension (see the dedicated section [Extensions](#extensions), in [Input parameters](#input-parameters)). 
 
 #
 ## In-depth parameterization
 As mentioned in the [Introduction](#LEModeler), the modeling tool was designed to be user-friendly by default. 
-However, for whohever wishes to model a specific geometry with higher accuracy, it is possible to modify local parameters within the python scripts in the "PythonFiles" folder.
+However, for whoever wishes to model a specific geometry with higher accuracy, it is possible to modify local parameters within the Python scripts in the "PythonFiles" folder.
 That, however, requires knowledge of the Python language and the basics of Non-uniform rational basis spline (NURBS). As for the latter, a practical explanation is given in the dedicated section [Explanation of NURBS](#explanation-of-nurbs). For further information, or merely an introduction to the NURBS theory, refer to the dedicated section **Nonuniform Rational Basis Splines** (p. 60 to 64) in [Aircraft Aerodynamic Design - Geometry and Optimization](https://www.wiley.com/en-gb/Aircraft+Aerodynamic+Design%3A+Geometry+and+Optimization-p-9780470662571) or [The NURBS Book](https://link.springer.com/book/10.1007/978-3-642-97385-7).
 
 #
