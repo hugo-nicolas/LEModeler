@@ -4,7 +4,7 @@ LEModeler is an open-source tool for automatically generating and exporting para
 
 #
 ## Credit
-Developed and provided by Hugo NICOLAS - [hugo.nicolas@ensta-bretagne.org](mailto:hugo.nicolas@ensta-bretagne.org)
+Developed and provided by Hugo NICOLAS - [hugo.nicolas@polytechnique.edu](mailto:hugo.nicolas@polytechnique.edu)
 
 Based on the book [Aircraft Aerodynamic Design - Geometry and Optimization](https://www.wiley.com/en-gb/Aircraft+Aerodynamic+Design%3A+Geometry+and+Optimization-p-9780470662571) by András Sóbester and Alexander I J Forrester.
 A library of aircraft geometry codes in Matlab to accompany the book is available [here](https://github.com/sobester/airgeobookcode_m).
