@@ -10,6 +10,9 @@ Based on the book [Aircraft Aerodynamic Design - Geometry and Optimization](http
 A library of aircraft geometry codes in Matlab to accompany the book is available [here](https://github.com/sobester/airgeobookcode_m).
 A library of Python 2.7 scripts for building aircraft geometries is available [here](https://github.com/sobester/AirCONICS).
 
+LEModeler was used successfully to generate hydrofoil geometries for analyzing free-surface effects.
+See the associated journal publication [here](https://onepetro.org/JST/article/8/01/183/538700/Boundary-Element-Method-Analysis-of-3D-Effects-and?searchresult=1).
+
 # 
 ## Prerequisites
 An installed version of [Rhinoceros3D](https://www.rhino3d.com/en/) (Rhino 6 or higher) is required to run the modeling tool.
@@ -234,7 +237,7 @@ That is, for each of the parts mentioned above (e.g., the whole main wing), the 
 "NAME" denotes the name of the part exported (i.e., wing, stab, mast, or fuselage) while ".xxx" denotes the export format extension (see the dedicated section [Extensions](#extensions), in [Input parameters](#input-parameters)). 
 
 #
-## In-depth parameterization
+## Detailed parameterization
 As mentioned in the [Introduction](#LEModeler), the modeling tool was designed to be user-friendly by default. 
 However, for whoever wishes to model a specific geometry with higher accuracy, it is possible to modify local parameters within the Python scripts in the "PythonFiles" folder.
 That, however, requires knowledge of the Python language and the basics of Non-uniform rational basis spline (NURBS). As for the latter, a practical explanation is given in the dedicated section [Explanation of NURBS](#explanation-of-nurbs). For further information, or merely an introduction to the NURBS theory, refer to the dedicated section **Nonuniform Rational Basis Splines** (p. 60 to 64) in [Aircraft Aerodynamic Design - Geometry and Optimization](https://www.wiley.com/en-gb/Aircraft+Aerodynamic+Design%3A+Geometry+and+Optimization-p-9780470662571) or [The NURBS Book](https://link.springer.com/book/10.1007/978-3-642-97385-7).
